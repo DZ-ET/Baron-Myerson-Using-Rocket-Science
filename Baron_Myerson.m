@@ -4,14 +4,13 @@
 
 clc; clear;
 addpath /Users/dihanzou/Library/CloudStorage/OneDrive-Personal/MATLAB_WD/OptimTraj-master
-addpath ./chebfun
 
 % market primitives
 
 par.d = 0.001;
 par.v = 0:par.d:1;
 
-par.alpha = 0; % welfare weight on profit
+par.alpha = 1; % welfare weight on profit
 % \alpha = 0: strongest redistributional motive; \alpha = 1: utilitarian regulator
 
 %par.CAP = 0.1; % Cap of lump-sum transfer. UNCOMMENT THE PATH CONSTRAINT
@@ -82,7 +81,7 @@ problem.bounds.control.upp = 0;
 
 % Guess at the initial trajectory
 problem.guess.time = [0,1];
-problem.guess.state = [0.25, 0; 0.5, 0];
+problem.guess.state = [0.2, 0; 0.8, 0];
 problem.guess.control = [0, 0];
 
 
