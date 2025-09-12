@@ -1,4 +1,12 @@
 % Baron_Myerson without fixed cost
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% To work with fixed cost, make the following changes to the code: 
+% 1. K = 0.05; (define fixed cost)
+% 2. Change problem.bounds.finalTime.low to 0.1, or something small
+% 3. Change problem.bounds.finalState.low to [K;0]; problem.bounds.finalState.upp to [K;1];
+% 4. Change Objective_BM(t,x,u,par) so the fixed cost enters appropriately into the integrand. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 %% Initialization
 
