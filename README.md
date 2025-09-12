@@ -12,3 +12,11 @@ The attached figures showcase the optimal policy in Baron-Myerson setting with u
 
 I am happy to chat if you have any interesting findings playing with this project. Feel free to shoot an email at $\texttt{dihanzou AT gmail DOT com}$.
 
+
+**Reference**
+
+Amador, Manuel and Kyle Bagwell (2022): ``Regulating a Monopolist with Uncertain Costs without Tranfers,'' *Theoretical Economics*, 17 (4): 1719-1760
+
+Baron, David P. and Roger B. Myerson (1982): ``Regulating a Monopolist with Unknown Costs,'' *Econometrica*, 50 (4), 911 - 930.
+
+Wei, Jiaming and Dihan Zou (2025): ``Monopoly Regulation without Subsidy,'' Working Paper. 
