@@ -8,7 +8,7 @@ The approach of this project is to transcribe a nonlinear pricing/tax problem in
 
 As for the method part of $\texttt{Baron}\underline{ }\texttt{Myerson.m}$, I strongly suggest users take the $\texttt{trapezoid}$ method or $\texttt{hermiteSimpson}$ method, as they are more robust to discontinuities in $q'$ or even $q$ (demand policy). Higher-order methods such as $\texttt{chebyshev}$ tend to over-smooth the policy, leading to non-convergence. See [here](https://epubs.siam.org/doi/10.1137/16M1062569) for technical details.
 
-The attached figures showcase the optimal policy in Baron-Myerson setting with uniform demand and cost for $\alpha = 0$ or $1$. See [here](https://drive.google.com/file/d/110uUldyFOqUwwcxvAnlAUYcNniI8MHJ_/view?usp=sharing) for a quick tutorial on Baron-Myerson model.
+The attached figures showcase the optimal policy in Baron-Myerson setting with linear demand and various cost settings for $\alpha = 0$ or $1$. See [here](https://drive.google.com/file/d/110uUldyFOqUwwcxvAnlAUYcNniI8MHJ_/view?usp=sharing) for a quick tutorial on Baron-Myerson model.
 
 I am happy to chat if you have any interesting findings playing with this project. Feel free to shoot an email at $\texttt{dihanzou AT gmail DOT com}$.
 
