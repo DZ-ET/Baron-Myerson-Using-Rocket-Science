@@ -11,50 +11,75 @@
 %% Initialization
 
 clc; clear;
-addpath /Users/dihanzou/Library/CloudStorage/OneDrive-Personal/MATLAB_WD/OptimTraj-master
+addpath ./OptimTraj-master  % add your own path for OptimTraj-master
 
 % market primitives
+
+% Inverse demand approach
+
+% parameters for linear inverse demand
+A = 1; % A <= 1
+B = 1; % A <= 2B
+
+par.P = @(q) max(A - B*q,0); % linear inverse demand
+
+
+
+% parameter for constant-elastic inverse demand
+% eta = 1.5; % absolute value of elasticity
+
+% par.P = @(q) min(0.1*q.^(-1/eta) - 0.1, A); % constant-elastic inverse demand (truncated)
+
+
 
 par.d = 0.001;
 par.v = 0:par.d:1;
 
-par.alpha = 1; % welfare weight on profit
+par.alpha = 0; % welfare weight on profit
 % \alpha = 0: strongest redistributional motive; \alpha = 1: utilitarian regulator
 
 %par.CAP = 0.1; % Cap of lump-sum transfer. UNCOMMENT THE PATH CONSTRAINT
 %IF NEEDED
 
+
+
+% Consumer value approach
+
 % linear demand curve
-par.g = ones(1,1001);   % consumer value distribution (pdf)
-par.G = par.v;          % consumer value distribution (cdf)
+%par.g = ones(1,1001);   % consumer value distribution (pdf)
+%par.G = par.v;          % consumer value distribution (cdf)
 
 
 %%% CHOOSE THE COST DISTRIBUTION FROM UNIFORM OR NORMAL
 
 % uniform cost
-
-par.F = par.v;
-par.f = ones(1,1001);
+% 
+% par.F = par.v;
+% par.f = ones(1,1001);
 
 %truncated normal
-
+% 
 % mu = 0.5; %0.15
 % 
-% sigma = 0.1;
+% sigma = 0.12;
 % 
 % xi = (par.v - mu)/sigma;
 % beta = (1 - mu)/sigma;
 % alpha = -mu/sigma;
 % 
-%  par.F = (normcdf(xi) - normcdf(alpha))/(normcdf(beta)-normcdf(alpha));
-%  par.f = normpdf(xi)/sigma/(normcdf(beta)-normcdf(alpha));
+% par.F = (normcdf(xi) - normcdf(alpha))/(normcdf(beta)-normcdf(alpha));
+% par.f = normpdf(xi)/sigma/(normcdf(beta)-normcdf(alpha));
 
 
-% Johnson-Myatt % not converging
+% Johnson-Myatt % will see ironing!
 % % 
-% par.f = 0.5*normpdf(par.v,0.3,0.1) + 0.5*normpdf(par.v,0.7,0.1);
+ par.f = 0.5*normpdf(par.v,0.3,0.1) + 0.5*normpdf(par.v,0.7,0.1);
 % 
-% par.F = cumtrapz(par.f)*par.d;
+ par.F = cumtrapz(par.f)*par.d;
+
+% fixed cost = K
+par.K = 0.05; % If want to use fixed cost, change the objective accordingly
+
 
 
 
