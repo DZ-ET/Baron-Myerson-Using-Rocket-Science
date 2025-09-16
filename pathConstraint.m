@@ -19,13 +19,13 @@ ceq = [];
 
 %%% WEI-ZOU
 
-% c = -1 + GG(pft./q + t, par)  + q;  
+% c = pft - (q .* par.P(q) - q .* t);
 % 
 % c(q==0) = -1;
 % ceq = [];
 
 %%% AMADOR-BAGWELL -- need a good initial guess
-% ceq = -1 + GG(pft./q + t, par)  + q;  
+% ceq = pft - (q .* par.P(q) - q .* t);
 % 
 % ceq(q==0) = -1;
 % 
