@@ -247,7 +247,6 @@ end
 
 
 
-
 %% Solve the problem
 soln = optimTraj(problem);
 c = soln(end).grid.time;
@@ -255,7 +254,16 @@ pft = soln(end).grid.state(1,:);
 q = soln(end).grid.state(2,:);
 u = soln(end).grid.control;
 
-cst_val = 1 - GG(pft./q + c, par)  - q;
+price = pft./q + c;
+
+%cst_val = 1 - GG(price, par)  - q;
+
+cst_val = q .* (par.P(q) - c)  - pft;
+
+exclude = find(q<5e-3,1);
+
+price(exclude:end) = nan;
+cst_val(exclude:end) = nan;
 
 %% Plot the solution:
 figure(1); clf;
