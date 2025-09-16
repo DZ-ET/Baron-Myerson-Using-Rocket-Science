@@ -1,5 +1,5 @@
 # Baron-Myerson-Using-Rocket-Science
-This is set of self-contained Matlab implementation for numerical simulation of models on monopoly regulation, based on [OptimTraj](https://github.com/MatthewPeterKelly/OptimTraj), This is the only dependency of th
+This is set of self-contained Matlab implementation for numerical simulation of models on monopoly regulation, based on [OptimTraj](https://github.com/MatthewPeterKelly/OptimTraj). This is the only dependency of the project.
 Without the support and commitment to open source from engineers like @MatthewPeterKelly, it would be intimidating for economic theorist to simulate a policy under mechanism design. But now, it only takes the effort of a single click. 
 
 The basic function of this project is to simulate the policy of a simplified [Baron-Myerson](https://www.jstor.org/stable/1912769?seq=1) model *(consumer value and seller's cost have the same support of [0,1], no fixed cost)* with welfare weight $\alpha \in [0,1]$.
