@@ -31,6 +31,12 @@ par.P = @(q) max(A - B*q,0); % linear inverse demand
 % par.P = @(q) min(0.1*q.^(-1/eta) - 0.1, A); % constant-elastic inverse demand (truncated)
 
 
+% parameters for logarithmic inverse demand
+% beta = 0.2;
+% mu = 0;
+% par.P = @(q) min(mu - beta * log(q), A);
+
+
 
 par.d = 0.001;
 par.v = 0:par.d:1;
