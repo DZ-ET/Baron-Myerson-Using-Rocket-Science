@@ -103,7 +103,7 @@ problem.func.pathObj = @(t,x,u)( Objective_BM(t,x,u,par) ); % beware of minimiza
 % Problem bounds
 problem.bounds.initialTime.low = 0;
 problem.bounds.initialTime.upp = 0;
-problem.bounds.finalTime.low = 1;
+problem.bounds.finalTime.low = 0.5;
 problem.bounds.finalTime.upp = 1;
 
 problem.bounds.state.low = [0; 0];
@@ -112,8 +112,8 @@ problem.bounds.state.upp = [inf; 1];
 
 problem.bounds.initialState.low = [0; 0];
 problem.bounds.initialState.upp = [20; 1];
-problem.bounds.finalState.low = [0;0];
-problem.bounds.finalState.upp = [0;0];
+problem.bounds.finalState.low = [par.K;0];
+problem.bounds.finalState.upp = [par.K;1];
 
 problem.bounds.control.low = -inf; % -inf
 problem.bounds.control.upp = 0; 
