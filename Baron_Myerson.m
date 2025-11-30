@@ -32,9 +32,9 @@ par.P = @(q) max(A - B*q,0); % linear inverse demand
 
 
 % parameters for logarithmic inverse demand
-% beta = 0.2;
+% beta = 0.5;
 % mu = 0;
-% par.P = @(q) min(mu - beta * log(q), A);
+% par.P = @(q) min(mu - beta * log(q), 100);
 
 
 
